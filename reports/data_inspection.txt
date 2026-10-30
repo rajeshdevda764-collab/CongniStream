@@ -1,0 +1,42 @@
+COGNISTREAM - DATA INSPECTION REPORT
+=============================================
+
+Total records: 500
+Total columns: 11
+Missing values: 0
+Duplicate rows: 0
+Duplicate session IDs: 0
+Unique developers: 10
+
+Column data types:
+session_id                  str
+developer_id                str
+date                        str
+task_type                   str
+session_duration_min      int64
+focused_time_min          int64
+interruptions             int64
+task_complexity           int64
+perceived_workload        int64
+completed_tasks           int64
+productivity_score      float64
+
+Numerical statistics:
+       session_duration_min  focused_time_min  interruptions  task_complexity  perceived_workload  completed_tasks  productivity_score
+count            500.000000        500.000000     500.000000       500.000000          500.000000       500.000000          500.000000
+mean             153.874000        104.412000       4.910000         3.080000            3.620000         2.106000           66.862620
+std               51.496621         40.660507       3.153059         1.437265            1.105461         0.946867           17.770381
+min               60.000000         35.000000       0.000000         1.000000            1.000000         0.000000           26.240000
+25%              109.750000         71.000000       2.000000         2.000000            3.000000         1.000000           52.665000
+50%              154.500000        100.000000       5.000000         3.000000            4.000000         2.000000           67.930000
+75%              197.000000        135.000000       8.000000         4.000000            5.000000         3.000000           81.390000
+max              240.000000        219.000000      10.000000         5.000000            5.000000         6.000000          100.000000
+
+Task type distribution:
+task_type
+Planning         92
+Documentation    89
+Debugging        85
+Code Review      85
+Coding           81
+Testing          68
