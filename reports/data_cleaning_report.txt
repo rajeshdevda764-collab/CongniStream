@@ -1,0 +1,13 @@
+COGNISTREAM - DATA CLEANING REPORT
+=============================================
+Original records: 500
+Exact duplicate rows: 0
+Invalid or missing records removed: 0
+Duplicate session IDs removed: 0
+Total records removed: 0
+Cleaned records: 500
+Columns: 11
+Remaining missing values: 0
+Remaining duplicate IDs: 0
+
+Data source: Synthetic developer session data.
