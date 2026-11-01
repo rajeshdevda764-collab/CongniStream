@@ -1,0 +1,45 @@
+COGNISTREAM - EDA REPORT
+=============================================
+Source: Synthetic developer sessions
+Total sessions: 500
+Unique developers: 10
+Average focus time: 104.41 minutes
+Average productivity score: 66.86
+Average interruptions: 4.91
+Average focus ratio: 67.81%
+
+TASK TYPE DISTRIBUTION
+task_type
+Planning         92
+Documentation    89
+Code Review      85
+Debugging        85
+Coding           81
+Testing          68
+
+AVERAGE PRODUCTIVITY BY INTERRUPTION COUNT
+interruptions
+0     92.585000
+1     87.379811
+2     80.638810
+3     77.082766
+4     72.472400
+5     66.459524
+6     60.573750
+7     56.299130
+8     49.500789
+9     46.033191
+10    40.928140
+
+AVERAGE FOCUS RATIO BY TASK COMPLEXITY
+task_complexity
+1    0.705825
+2    0.697531
+3    0.677005
+4    0.653798
+5    0.660457
+
+NOTE: Productivity and workload indicators are
+simulated metrics, not real employee measurements.
+Relationships in this generated dataset should
+not be interpreted as causal evidence.
