@@ -1,0 +1,29 @@
+COGNISTREAM - DEVELOPER PRODUCTIVITY REPORT
+==================================================
+Dataset: Synthetic developer work sessions
+Total sessions: 500
+Developers: 10
+Overall focus efficiency: 67.86%
+
+PER-DEVELOPER SUMMARY
+developer_id  total_sessions  total_work_min  total_focus_min  average_interruptions  completed_tasks  average_productivity  focus_efficiency  tasks_per_focus_hour
+      DEV001              53            8372             5699                   4.89              110                 66.83             68.07                  1.16
+      DEV002              61            9996             6710                   4.98              140                 66.11             67.13                  1.25
+      DEV003              61            9571             6559                   5.02              136                 67.70             68.53                  1.24
+      DEV004              40            5885             3969                   5.08               80                 65.82             67.44                  1.21
+      DEV005              47            7400             5198                   4.15               98                 70.29             70.24                  1.13
+      DEV006              45            6636             4548                   4.91               90                 66.94             68.54                  1.19
+      DEV007              45            6967             4780                   5.18              110                 67.71             68.61                  1.38
+      DEV008              46            6860             4418                   5.17               91                 63.65             64.40                  1.24
+      DEV009              55            8565             5884                   4.76              108                 67.31             68.70                  1.10
+      DEV010              47            6685             4441                   4.98               90                 65.98             66.43                  1.22
+
+METRIC DEFINITIONS
+Focus efficiency = total focused minutes / total work minutes * 100
+Tasks per focus hour = completed tasks / focused hours
+Average productivity = mean synthetic productivity score
+
+IMPORTANT NOTE
+This analysis uses simulated data.
+Results are not real employee performance assessments.
+Productivity scores depend on the dataset generator's assumptions.
