@@ -1,0 +1,40 @@
+COGNISTREAM - COGNITIVE LOAD REPORT
+==================================================
+Source: Synthetic developer session dataset
+Total sessions: 500
+Average estimated load: 55.18
+
+COGNITIVE LOAD LEVELS
+cognitive_load_level
+Low         111
+Moderate    229
+High        160
+
+AVERAGE LOAD BY DEVELOPER
+developer_id
+DEV001    52.44
+DEV002    57.41
+DEV003    56.16
+DEV004    50.04
+DEV005    52.55
+DEV006    57.46
+DEV007    55.87
+DEV008    53.46
+DEV009    56.65
+DEV010    58.23
+
+SCORING METHODOLOGY
+40% task complexity
+30% interruptions
+30% simulated workload
+
+Low: score below 35
+Moderate: score from 35 to below 70
+High: score 70 or above
+
+LIMITATIONS
+This is a heuristic score for demonstration.
+The weights and thresholds are not validated.
+The workload data is simulated.
+It is not a clinical or psychological assessment.
+Scores should not be used to evaluate employees.
