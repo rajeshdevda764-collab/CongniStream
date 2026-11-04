@@ -1,0 +1,41 @@
+COGNISTREAM - FLOW-STATE ANALYSIS REPORT
+==================================================
+Source: Synthetic developer work sessions
+Total sessions: 500
+Unique developers: 10
+Average estimated flow score: 61.97
+
+FLOW-STATE DISTRIBUTION
+flow_state_level
+Low Flow          53
+Moderate Flow    272
+High Flow        175
+
+AVERAGE FLOW SCORE BY DEVELOPER
+developer_id
+DEV001    62.40
+DEV002    60.78
+DEV003    60.38
+DEV004    62.16
+DEV005    65.72
+DEV006    61.54
+DEV007    62.01
+DEV008    59.04
+DEV009    64.28
+DEV010    61.77
+
+SCORING METHODOLOGY
+60% focus efficiency
+25% interruption score
+15% estimated cognitive load balance
+
+Low Flow: below 40
+Moderate Flow: 40 to below 70
+High Flow: 70 and above
+
+LIMITATIONS
+This is a heuristic demonstration metric.
+Weights and categories have not been validated.
+All input records are synthetic.
+It does not confirm psychological flow.
+Not suitable for real employee assessment.
