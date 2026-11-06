@@ -14,6 +14,9 @@ CANDIDATES = [DATA_DIR / 'flow_state_results.csv', DATA_DIR / 'cognitive_load_re
 COLORS = {'Low Flow':'#e5a971','Moderate Flow':'#75b6e7','High Flow':'#4cceb0'}
 
 st.set_page_config(page_title='CogniStream | Developer Analytics', page_icon='🧠', layout='wide')
+if st.sidebar.button("🔄 Refresh Dashboard"):
+    st.cache_data.clear()
+    st.rerun()
 st.markdown('''<style>
 .stApp{background:#0a1425;color:#eaf1fc}
 [data-testid="stMetric"]{background:#152641;border:1px solid #28415d;border-radius:14px;padding:16px}
