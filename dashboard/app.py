@@ -64,7 +64,23 @@ except (ValueError,KeyError,TypeError) as ex:
 
 st.title('COGNISTREAM')
 st.caption('Developer Flow-State & Cognitive Load Analytics | Infotact Solutions | Synthetic demonstration data')
+
+# Day 13: Reset dashboard filters
+if st.session_state.pop("reset_filters", False):
+    for key in ["filter_devs", "filter_tasks", "filter_dates", "filter_flows"]:
+        st.session_state.pop(key, None)
+
+# Day 13: Reset dashboard filters
+if st.session_state.pop("reset_filters", False):
+    for key in ["filter_devs", "filter_tasks", "filter_dates", "filter_flows"]:
+        st.session_state.pop(key, None)
+
+# Day 13: Reset dashboard filters
+if st.session_state.pop("reset_filters", False):
+    for key in ["filter_devs", "filter_tasks", "filter_dates", "filter_flows"]:
+        st.session_state.pop(key, None)
 with st.sidebar:
+ 
     st.header('Explore sessions')
     devs=st.multiselect('Developers', sorted(all_df.developer_id.unique()),default=sorted(all_df.developer_id.unique()))
     tasks=st.multiselect('Task types',sorted(all_df.task_type.unique()),default=sorted(all_df.task_type.unique()))
