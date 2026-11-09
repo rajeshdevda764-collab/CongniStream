@@ -147,3 +147,29 @@ with detail:
 
 st.divider()
 st.caption('Methodology: synthetic data. Cognitive load (40% complexity, 30% interruptions, 30% simulated workload) and flow state (60% focus, 25% interruptions, 15% load balance) are unvalidated heuristic scores. They are not real-world psychological or employee performance measurements. Correlations in generated data do not establish causal relationships.')
+
+
+# Day 14: Developer Comparison Insights
+st.subheader("Developer Comparison Insights")
+
+developer_comparison = (
+    df.groupby("developer_id", as_index=False)
+    .agg(
+        avg_productivity=("productivity_score", "mean"),
+        avg_cognitive_load=("cognitive_load_score", "mean"),
+        avg_flow_score=("flow_state_score", "mean"),
+        sessions=("session_id", "count"),
+    )
+    .round(2)
+)
+
+st.dataframe(
+    developer_comparison,
+    use_container_width=True,
+    hide_index=True
+)
+
+st.caption(
+    "Compare productivity, estimated cognitive load, "
+    "and flow-state scores across developers."
+)
