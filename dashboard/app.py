@@ -173,3 +173,18 @@ st.caption(
     "Compare productivity, estimated cognitive load, "
     "and flow-state scores across developers."
 )
+
+
+# Day 15: Cognitive Load Distribution
+st.subheader("Cognitive Load Distribution")
+
+if "cognitive_load_level" in df.columns:
+    load_counts = (
+        df["cognitive_load_level"]
+        .value_counts()
+        .reindex(["Low", "Moderate", "High"], fill_value=0)
+    )
+
+    st.bar_chart(load_counts)
+else:
+    st.info("Cognitive load categories are not available.")
