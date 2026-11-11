@@ -188,3 +188,26 @@ if "cognitive_load_level" in df.columns:
     st.bar_chart(load_counts)
 else:
     st.info("Cognitive load categories are not available.")
+
+
+# Day 16: Flow-State Trend Analysis
+st.subheader("Daily Flow-State Trend")
+
+flow_trend = (
+    df.groupby(df["date"].dt.date)["flow_state_score"]
+    .mean()
+    .reset_index()
+)
+
+flow_trend.columns = ["Date", "Average Flow Score"]
+
+st.line_chart(
+    flow_trend,
+    x="Date",
+    y="Average Flow Score"
+)
+
+st.caption(
+    "Daily average estimated flow-state score "
+    "across selected developer sessions."
+)
