@@ -211,3 +211,38 @@ st.caption(
     "Daily average estimated flow-state score "
     "across selected developer sessions."
 )
+
+# Day 17: Productivity Recommendations
+st.subheader("Productivity Recommendations")
+
+avg_productivity = df["productivity_score"].mean()
+avg_interruptions = df["interruptions"].mean()
+
+if avg_interruptions >= 6:
+    st.info(
+        "High interruption levels detected. "
+        "Consider reducing unnecessary notifications "
+        "and scheduling focused work periods."
+    )
+else:
+    st.success(
+        "Interruption levels are relatively low. "
+        "Continue supporting distraction-free work."
+    )
+
+if avg_productivity < 60:
+    st.warning(
+        "Average productivity is below 60. "
+        "Consider reviewing task priorities and "
+        "workload distribution."
+    )
+else:
+    st.info(
+        "Average productivity is 60 or above. "
+        "Continue monitoring trends and improving workflows."
+    )
+
+st.caption(
+    "Recommendations are based on simulated session data "
+    "and simple thresholds, not individual performance assessments."
+)
