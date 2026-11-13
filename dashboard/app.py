@@ -7,6 +7,7 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
+import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / 'data' / 'processed'
@@ -142,7 +143,11 @@ with analysis:
     st.plotly_chart(fig,use_container_width=True)
 with detail:
     st.subheader('Filtered sessions')
-    st.dataframe(df.sort_values('date',ascending=False),use_container_width=True,hide_index=True)
+    st.markdown(
+    df.sort_values("date", ascending=False)
+      .to_html(index=False, escape=True),
+    unsafe_allow_html=True
+)
     st.download_button('Download filtered CSV',df.to_csv(index=False).encode('utf-8'),'cognistream_filtered.csv','text/csv')
 
 st.divider()
@@ -163,31 +168,16 @@ developer_comparison = (
     .round(2)
 )
 
-st.dataframe(
-    developer_comparison,
-    use_container_width=True,
-    hide_index=True
+# Developer Comparison Table
+st.markdown(
+    developer_comparison.to_html(index=False, escape=True),
+    unsafe_allow_html=True
 )
 
 st.caption(
     "Compare productivity, estimated cognitive load, "
     "and flow-state scores across developers."
 )
-
-
-# Day 15: Cognitive Load Distribution
-st.subheader("Cognitive Load Distribution")
-
-if "cognitive_load_level" in df.columns:
-    load_counts = (
-        df["cognitive_load_level"]
-        .value_counts()
-        .reindex(["Low", "Moderate", "High"], fill_value=0)
-    )
-
-    st.bar_chart(load_counts)
-else:
-    st.info("Cognitive load categories are not available.")
 
 
 # Day 16: Flow-State Trend Analysis
@@ -201,12 +191,51 @@ flow_trend = (
 
 flow_trend.columns = ["Date", "Average Flow Score"]
 
-st.line_chart(
-    flow_trend,
-    x="Date",
-    y="Average Flow Score"
+fig, ax = plt.subplots(figsize=(9, 4))
+ax.plot(
+    flow_trend["Date"],
+    flow_trend["Average Flow Score"],
+    marker="o"
 )
 
+ax.set_xlabel("Date")
+ax.set_ylabel("Average Flow Score")
+ax.set_title("Daily Flow-State Trend")
+
+fig.autofmt_xdate()
+st.pyplot(fig)
+plt.close(fig)
+
+st.caption(
+    "Daily average estimated flow-state score "
+    "across selected developer sessions."
+)
+
+# Day 16: Flow-State Trend Analysis
+st.subheader("Daily Flow-State Trend")
+
+flow_trend = (
+    df.groupby(df["date"].dt.date)["flow_state_score"]
+    .mean()
+    .reset_index()
+)
+
+flow_trend.columns = ["Date", "Average Flow Score"]
+fig, ax = plt.subplots(figsize=(9, 4))
+
+ax.plot(
+    flow_trend["Date"],
+    flow_trend["Average Flow Score"],
+    marker="o"
+)
+
+ax.set_xlabel("Date")
+ax.set_ylabel("Average Flow Score")
+ax.set_title("Daily Flow-State Trend")
+
+fig.autofmt_xdate()
+st.pyplot(fig)
+plt.close(fig)
 st.caption(
     "Daily average estimated flow-state score "
     "across selected developer sessions."
@@ -245,4 +274,22 @@ else:
 st.caption(
     "Recommendations are based on simulated session data "
     "and simple thresholds, not individual performance assessments."
+)
+
+
+# Day 18: Download Filtered Session Data
+st.subheader("Export Filtered Session Data")
+
+csv_data = df.to_csv(index=False).encode("utf-8")
+
+st.download_button(
+    label="Download Filtered CSV",
+    data=csv_data,
+    file_name="CogniStream_Filtered_Sessions.csv",
+    mime="text/csv"
+)
+
+st.caption(
+    "Download session records based on the currently "
+    "selected developer, task type, date, and flow-state filters."
 )
